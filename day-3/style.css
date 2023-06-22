@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bg: #2b2b2b;
+  --fg: #dddddd;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+form {
+  border: 1px solid var(--fg);
+  padding: 20px;
+}
+form input {
+  display: block;
+  padding: 20px;
+  font-size: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  width: 300px;
+  transition: 0.3s;
+}
+form input:hover {
+  box-shadow: 0 0 50px rgb(123, 255, 0);
+}
+form input:focus {
+  width: 70%;
+}
+
+form input[type="submit"] {
+  background-color: tomato;
+  color: var(--fg);
+  padding: 5px 20px;
+  cursor: pointer;
+}
