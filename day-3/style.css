@@ -8,8 +8,13 @@
 }
 
 body {
-  background-color: var(--bg);
+  background-image: url(./itachi.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: var(--fg);
+  width: 100%;
+  height: 100vh;
 }
 form {
   border: 1px solid var(--fg);
@@ -19,12 +24,13 @@ form input {
   display: block;
   padding: 20px;
   font-size: 20px;
-  margin-top: 30px;
+  margin: 30px auto;
   border-radius: 10px;
   border: none;
   outline: none;
   width: 300px;
   transition: 0.3s;
+  background-color: rgb(255, 230, 0);
 }
 form input:hover {
   box-shadow: 0 0 50px rgb(123, 255, 0);
