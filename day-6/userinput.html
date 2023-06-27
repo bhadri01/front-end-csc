@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>user input</title>
+  </head>
+  <body>
+    <form onsubmit="Generate(event)">
+      <input
+        type="number"
+        name="tables"
+        id="tables"
+        placeholder="number of the table"
+        required
+      />
+      <input
+        type="number"
+        name="tablesrange"
+        id="tablesrange"
+        placeholder="number of the table range"
+        value="10"
+        required
+      />
+      <input type="submit" value="generate" />
+    </form>
+    <div id="showtables"></div>
+    <script>
+      function Generate(ae) {
+        ae.preventDefault();
+        const num = parseInt(document.getElementById("tables").value);
+        const range = parseInt(document.getElementById("tablesrange").value);
+        const showtable = document.getElementById("showtables");
+        showtable.innerHTML = "";
+        for (var i = 1; i <= range; i++) {
+          showtable.innerHTML += `
+            <h3>
+            ${i}
+            x
+            ${num}
+            =
+            ${i * num}
+            </h3>
+          `;
+        }
+      }
+    </script>
+  </body>
+</html>
