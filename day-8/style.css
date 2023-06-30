@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  background-color: rgb(121, 0, 70);
+  padding: 40px 0;
+  gap: 20px;
+  position: relative;
+  z-index: -1;
+  display: none;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(40, 154, 255);
+}
+.box:nth-child(1) {
+  background-color: green;
+  /* z-index: -2; */
+}
+.box:nth-child(2) {
+  background-color: rgb(3, 240, 129);
+}
+.box:nth-child(3) {
+  background-color: rgb(0, 0, 0);
+}
+.box:nth-child(4) {
+  background-color: rgb(3, 58, 240);
+}
+.box:nth-child(5) {
+  background-color: rgb(207, 1, 197);
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: -1;
+}
+.box:nth-child(6) {
+  position: absolute;
+  top: 20px;
+  right: 0;
+  z-index: -1;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  font-size: 20px;
+  text-transform: capitalize;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  background-color: black;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  width: 200px;
+  opacity: 1;
+  /* transform: translate(00px) */
+  /* animation: buttondance 1s 2s ease-in-out forwards; */
+}
+
+@keyframes buttondance {
+  20% {
+    opacity: 1;
+  }
+  60% {
+    /* width: 440px; */
+    opacity: 1;
+    transform: scale(0.5)
+  }
+  80% {
+    /* width: 380px; */
+    opacity: 1;
+    transform: scale(1.5)
+  }
+  100% {
+    background-color: black;
+    /* width: 400px; */
+    opacity: 1;
+    transform: skew(120deg)
+  }
+}
