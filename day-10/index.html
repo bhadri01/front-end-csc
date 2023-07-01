@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div id="menu" class="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </header>
+
+    <menu id="menulist"></menu>
+
+    <script>
+      const menulist = [
+        "home",
+        "about",
+        "products",
+        "services",
+        "events",
+        "help",
+      ];
+      const menu = document.getElementById("menu");
+      const menuli = document.getElementById("menulist");
+      menu.addEventListener("click", () => {
+        menu.classList.toggle("active");
+        if (menu.className.search("active") > 0) {
+          menuli.style.width = "100%";
+        } else {
+          menuli.style.width = "0%";
+        }
+      });
+
+      menulist.map((data, index) => {
+        menuli.innerHTML += `<a onmouseenter="menuaction(${index})" onmouseleave="menuclose(${index})">${data}</a>`;
+      });
+
+      function menuaction(index) {
+        let menu_a = menuli.childNodes;
+        for (var i = 0; i < menu_a.length; i++) {
+          if (i == index) {
+            menu_a[i].style.transform = " scale(1.4)";
+            continue;
+          }
+          if (i % 2 == 0) {
+            menu_a[i].style.transform = "translate(200px)";
+            menu_a[i].style.animation = "fademenu 0.3s  ease-in-out forwards";
+          } else {
+            menu_a[i].style.transform = "translate(-200px)";
+            menu_a[i].style.animation = "fademenu 0.3s  ease-in-out forwards";
+          }
+        }
+      }
+
+      function menuclose(index) {
+        let menu_a = menuli.childNodes;
+        for (var i = 0; i < menu_a.length; i++) {
+          if (i == index) {
+            menu_a[i].style.transform = " scale(1)";
+            continue;
+          } else {
+            menu_a[i].style.transform = "translate(0px)";
+            menu_a[i].style.animation = "menushow 0.3s  ease-in-out forwards";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
